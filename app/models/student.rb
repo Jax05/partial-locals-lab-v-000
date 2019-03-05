@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if query.blank?
       self.all
     else
-      where('name LIKE :query', query: "%#{query}%")
+      self.where('students.name LIKE :query', query: "%#{query}%")
     end
   end
 end
